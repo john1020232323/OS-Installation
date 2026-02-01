@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows OS Installation Guide - VirtualBox Tutorial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .video-container {
+            margin: 30px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-placeholder {
+            background: #f0f0f0;
+            padding: 40px;
+            text-align: center;
+            border: 2px dashed #667eea;
+            border-radius: 10px;
+        }
+
+        .video-placeholder p {
+            color: #666;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .info-box {
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .specs {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .specs h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Windows OS Installation Guide</h1>
+            <p class="subtitle">VirtualBox Installation Tutorials</p>
+        </header>
+
+        <nav>
+            <button class="nav-btn active" onclick="showSection('home')">Home</button>
+            <button class="nav-btn" onclick="showSection('win95')">Windows 95</button>
+            <button class="nav-btn" onclick="showSection('win98')">Windows 98</button>
+            <button class="nav-btn" onclick="showSection('winxp')">Windows XP</button>
+        </nav>
+
+        <!-- Home Section -->
+        <div id="home" class="content-section active">
+            <h2>Welcome to Windows OS Installation Guide</h2>
+            
+            <p>This comprehensive guide provides step-by-step tutorials for installing classic Windows operating systems in VirtualBox. Whether you're learning about operating system installation, exploring computing history, or setting up a legacy environment for compatibility testing, these tutorials will guide you through the process.</p>
+
+            <h3>About Windows Operating Systems</h3>
+            <p>Microsoft Windows is a family of operating systems that has dominated personal computing for decades. The Windows OS provides a graphical user interface (GUI) that allows users to interact with their computers through visual elements like windows, icons, and menus rather than command-line interfaces.</p>
+
+            <p>From its early versions in the 1990s to modern iterations, Windows has evolved significantly, introducing innovations in user experience, security, networking, and multimedia capabilities. Each version represents a milestone in computing history, reflecting the technological capabilities and user needs of its era.</p>
+
+            <h3>About VirtualBox and OS Installation</h3>
+            <p>VirtualBox is a free, open-source virtualization software that allows you to run multiple operating systems simultaneously on a single physical computer. It creates virtual machines (VMs) that simulate complete computer systems, enabling you to install and run different operating systems without affecting your host system.</p>
+
+            <div class="info-box">
+                <h4>Why Install Windows in VirtualBox?</h4>
+                <ul>
+                    <li><strong>Learning and Education:</strong> Perfect for understanding OS installation procedures and system administration</li>
+                    <li><strong>Testing and Development:</strong> Test software in different Windows environments safely</li>
+                    <li><strong>Legacy Software:</strong> Run older applications that require specific Windows versions</li>
+                    <li><strong>Safe Environment:</strong> Experiment without risking your main operating system</li>
+                    <li><strong>Preservation:</strong> Experience and preserve computing history</li>
+                </ul>
+            </div>
+
+            <h3>Installation Process Overview</h3>
+            <p>Installing a Windows operating system in VirtualBox involves several key steps:</p>
+            <ul>
+                <li><strong>Creating a Virtual Machine:</strong> Set up a new VM with appropriate settings for the Windows version</li>
+                <li><strong>Allocating Resources:</strong> Assign memory (RAM), storage space, and processor cores</li>
+                <li><strong>Mounting Installation Media:</strong> Load the Windows installation ISO file or CD image</li>
+                <li><strong>Following Installation Wizard:</strong> Complete the Windows setup process step by step</li>
+                <li><strong>Installing Guest Additions:</strong> Enhance VM performance and functionality</li>
+                <li><strong>Configuration:</strong> Set up networking, display settings, and shared folders</li>
+            </ul>
+
+            <h3>Featured Operating Systems</h3>
+            <p>This guide currently covers three significant Windows versions from the 1990s and early 2000s:</p>
+            
+            <div class="specs">
+                <h4>Windows 95</h4>
+                <p>The revolutionary operating system that brought the Start menu and taskbar to mainstream computing, marking a major shift in how people interacted with personal computers.</p>
+            </div>
+
+            <div class="specs">
+                <h4>Windows 98</h4>
+                <p>An improved version of Windows 95 with better USB support, Internet Explorer integration, and enhanced multimedia capabilities that defined late 1990s computing.</p>
+            </div>
+
+            <div class="specs">
+                <h4>Windows XP</h4>
+                <p>One of Microsoft's most successful operating systems, known for its stability, user-friendly interface, and longevity. It bridged consumer and professional computing needs.</p>
+            </div>
+
+            <div class="info-box">
+                <h4>Getting Started</h4>
+                <p>Use the navigation menu above to select the Windows version you want to install. Each section contains a detailed video tutorial and comprehensive information about that specific operating system.</p>
+            </div>
+        </div>
+
+        <!-- Windows 95 Section -->
+        <div id="win95" class="content-section">
+            <h2>Windows 95 Installation Tutorial</h2>
+            
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <p>📹 Video Tutorial: Installing Windows 95 in VirtualBox</p>
+                    <p style="font-size: 0.9em; margin-top: 10px;">Replace this section with your YouTube embedded video</p>
+                    <p style="font-size: 0.9em; color: #999;">Use: &lt;iframe width="100%" height="500" src="YOUR_YOUTUBE_URL" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</p>
+                </div>
+            </div>
+
+            <h3>About Windows 95</h3>
+            <p>Released on August 24, 1995, Windows 95 was a groundbreaking operating system that fundamentally changed personal computing. It introduced the iconic Start button, taskbar, and the concept of "plug and play" hardware installation. Windows 95 was the first Windows version to feature a 32-bit architecture while maintaining backward compatibility with 16-bit applications.</p>
+
+            <p>This operating system represented a major departure from the Windows 3.x series, offering a more intuitive user interface and better multitasking capabilities. It came pre-installed with Internet Explorer, marking Microsoft's entry into the web browser market. Windows 95 also introduced long filename support (up to 255 characters), replacing the old 8.3 filename format.</p>
+
+            <div class="specs">
+                <h4>System Requirements</h4>
+                <ul>
+                    <li><strong>Processor:</strong> Intel 80386DX or higher (486 recommended)</li>
+                    <li><strong>RAM:</strong> Minimum 4 MB (8 MB recommended for VirtualBox)</li>
+                    <li><strong>Hard Disk:</strong> 40-50 MB minimum (500 MB recommended for VirtualBox)</li>
+                    <li><strong>Display:</strong> VGA or higher resolution</li>
+                    <li><strong>Additional:</strong> CD-ROM drive, mouse or pointing device</li>
+                </ul>
+            </div>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>Start Menu:</strong> Centralized access point for programs and settings</li>
+                <li><strong>Taskbar:</strong> Persistent bar showing running applications</li>
+                <li><strong>Plug and Play:</strong> Automatic hardware detection and configuration</li>
+                <li><strong>32-bit Architecture:</strong> Improved performance and stability</li>
+                <li><strong>Long Filenames:</strong> Support for descriptive file names</li>
+                <li><strong>Windows Explorer:</strong> Integrated file management interface</li>
+                <li><strong>Network Capabilities:</strong> Built-in TCP/IP support for internet connectivity</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Installation Tips</h4>
+                <p>When installing Windows 95 in VirtualBox, allocate at least 64-128 MB of RAM for better performance. The installation process typically takes 20-30 minutes. Make sure to create a virtual hard disk of at least 2 GB to allow for software installation and updates.</p>
+            </div>
+        </div>
+
+        <!-- Windows 98 Section -->
+        <div id="win98" class="content-section">
+            <h2>Windows 98 Installation Tutorial</h2>
+            
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <p>📹 Video Tutorial: Installing Windows 98 in VirtualBox</p>
+                    <p style="font-size: 0.9em; margin-top: 10px;">Replace this section with your YouTube embedded video</p>
+                    <p style="font-size: 0.9em; color: #999;">Use: &lt;iframe width="100%" height="500" src="YOUR_YOUTUBE_URL" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</p>
+                </div>
+            </div>
+
+            <h3>About Windows 98</h3>
+            <p>Windows 98, released on June 25, 1998, was the successor to Windows 95 and represented a significant evolution in Microsoft's consumer operating system line. It was specifically designed to be more stable and user-friendly while incorporating emerging technologies of the late 1990s. Windows 98 Second Edition (SE), released in 1999, further improved the system with better USB support and Internet Connection Sharing.</p>
+
+            <p>This operating system was particularly notable for its improved hardware support, including USB devices, DVD drives, and multiple monitors. It featured tighter integration with the internet through Internet Explorer 4.0 (5.0 in SE), making web browsing more accessible to mainstream users. Windows 98 also introduced the Windows Driver Model (WDM), which improved device driver compatibility and reliability.</p>
+
+            <div class="specs">
+                <h4>System Requirements</h4>
+                <ul>
+                    <li><strong>Processor:</strong> Intel Pentium 150 MHz or higher</li>
+                    <li><strong>RAM:</strong> Minimum 16 MB (32 MB recommended, 64-128 MB for VirtualBox)</li>
+                    <li><strong>Hard Disk:</strong> 140-315 MB minimum (2 GB recommended for VirtualBox)</li>
+                    <li><strong>Display:</strong> VGA or higher resolution monitor</li>
+                    <li><strong>Additional:</strong> CD-ROM or DVD-ROM drive, mouse</li>
+                </ul>
+            </div>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>Improved USB Support:</strong> Better compatibility with USB devices</li>
+                <li><strong>Internet Explorer Integration:</strong> Deep web browser integration with the desktop</li>
+                <li><strong>Windows Driver Model:</strong> Improved driver architecture for better stability</li>
+                <li><strong>FAT32 File System:</strong> Support for larger hard drives and partitions</li>
+                <li><strong>Multiple Monitor Support:</strong> Ability to use multiple displays</li>
+                <li><strong>System File Protection:</strong> Prevention of critical system file corruption</li>
+                <li><strong>Enhanced Multimedia:</strong> DirectX 5 for improved gaming and graphics</li>
+                <li><strong>Internet Connection Sharing:</strong> Share one internet connection across multiple PCs (SE only)</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Installation Tips</h4>
+                <p>Windows 98 runs well in VirtualBox with 128 MB of RAM allocated. The installation takes approximately 20-40 minutes depending on your system. For the Second Edition, you'll get better hardware compatibility and internet features. Consider creating a 4 GB virtual hard disk for comfortable use with applications.</p>
+            </div>
+        </div>
+
+        <!-- Windows XP Section -->
+        <div id="winxp" class="content-section">
+            <h2>Windows XP Installation Tutorial</h2>
+            
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <p>📹 Video Tutorial: Installing Windows XP in VirtualBox</p>
+                    <p style="font-size: 0.9em; margin-top: 10px;">Replace this section with your YouTube embedded video</p>
+                    <p style="font-size: 0.9em; color: #999;">Use: &lt;iframe width="100%" height="500" src="YOUR_YOUTUBE_URL" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</p>
+                </div>
+            </div>
+
+            <h3>About Windows XP</h3>
+            <p>Windows XP, released on October 25, 2001, stands as one of Microsoft's most successful and longest-lived operating systems. The name "XP" stands for "eXPerience," reflecting Microsoft's goal of providing a more user-friendly and reliable computing experience. It merged the consumer-oriented Windows 9x line with the business-focused Windows NT/2000 architecture, creating a unified platform for all users.</p>
+
+            <p>Windows XP introduced the Luna visual style with its distinctive blue and green color scheme, making the interface more modern and approachable. It was praised for its stability, performance, and compatibility with a wide range of hardware and software. The operating system remained popular for over a decade, with mainstream support ending in 2009 and extended support continuing until April 2014. Many consider it the pinnacle of the classic Windows experience.</p>
+
+            <div class="specs">
+                <h4>System Requirements</h4>
+                <ul>
+                    <li><strong>Processor:</strong> Intel Pentium 233 MHz or higher (300 MHz recommended)</li>
+                    <li><strong>RAM:</strong> Minimum 64 MB (128 MB recommended, 512 MB-1 GB for VirtualBox)</li>
+                    <li><strong>Hard Disk:</strong> 1.5 GB minimum (10-20 GB recommended for VirtualBox)</li>
+                    <li><strong>Display:</strong> Super VGA (800x600) or higher resolution</li>
+                    <li><strong>Additional:</strong> CD-ROM or DVD-ROM drive, keyboard and mouse</li>
+                </ul>
+            </div>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>Luna Interface:</strong> Modern, visually appealing user interface with improved aesthetics</li>
+                <li><strong>Enhanced Stability:</strong> Built on Windows NT kernel for superior reliability</li>
+                <li><strong>Fast User Switching:</strong> Multiple users can stay logged in simultaneously</li>
+                <li><strong>Windows Firewall:</strong> Built-in network security protection</li>
+                <li><strong>System Restore:</strong> Ability to roll back system changes</li>
+                <li><strong>Remote Desktop:</strong> Connect to your computer from anywhere</li>
+                <li><strong>ClearType:</strong> Improved font rendering for LCD displays</li>
+                <li><strong>Windows Media Player 8:</strong> Enhanced multimedia capabilities</li>
+                <li><strong>Wireless Networking:</strong> Better Wi-Fi support and configuration</li>
+                <li><strong>Automatic Updates:</strong> Streamlined security and feature updates</li>
+            </ul>
+
+            <h3>Editions</h3>
+            <p>Windows XP was released in several editions to serve different market segments:</p>
+            <ul>
+                <li><strong>Home Edition:</strong> Designed for home users with entertainment and basic networking features</li>
+                <li><strong>Professional:</strong> Added features for business users including domain support and remote desktop hosting</li>
+                <li><strong>Media Center Edition:</strong> Specialized for home theater PCs with enhanced multimedia capabilities</li>
+                <li><strong>Tablet PC Edition:</strong> Optimized for pen and touch input on tablet devices</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Installation Tips</h4>
+                <p>For optimal performance in VirtualBox, allocate at least 512 MB to 1 GB of RAM. The installation process takes 30-60 minutes. Windows XP benefits from Service Pack 3 (SP3), which includes numerous updates and improvements. Create a virtual hard disk of at least 20 GB to accommodate the OS, updates, and applications comfortably. Enable 3D acceleration in VirtualBox settings for better graphics performance.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Windows OS Installation Guide | Educational Resource</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
