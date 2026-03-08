@@ -258,9 +258,18 @@
                     <span class="dropdown-arrow">▼</span>
                 </button>
                 <div class="dropdown-menu">
+                    <div class="dropdown-item" onclick="showSection('winnt')">Windows NT</div>
                     <div class="dropdown-item" onclick="showSection('win95')">Windows 95</div>
                     <div class="dropdown-item" onclick="showSection('win98')">Windows 98</div>
+                    <div class="dropdown-item" onclick="showSection('winme')">Windows ME</div>
+                    <div class="dropdown-item" onclick="showSection('win2000')">Windows 2000</div>
                     <div class="dropdown-item" onclick="showSection('winxp')">Windows XP</div>
+                    <div class="dropdown-item" onclick="showSection('win2003')">Windows Server 2003</div>
+                    <div class="dropdown-item" onclick="showSection('winvista')">Windows Vista</div>
+                    <div class="dropdown-item" onclick="showSection('win2008')">Windows Server 2008</div>
+                    <div class="dropdown-item" onclick="showSection('win8')">Windows 8</div>
+                    <div class="dropdown-item" onclick="showSection('win10')">Windows 10</div>
+                    <div class="dropdown-item" onclick="showSection('win11')">Windows 11</div>
                 </div>
             </div>
             
@@ -306,26 +315,76 @@
             </ul>
 
             <h3>Featured Operating Systems</h3>
-            <p>This guide currently covers three significant Windows versions from the 1990s and early 2000s:</p>
+            <p>This comprehensive guide covers Windows operating systems spanning from the early 1990s to the modern era, including consumer and server editions:</p>
             
             <div class="specs">
-                <h4>Windows 95</h4>
-                <p>The revolutionary operating system that brought the Start menu and taskbar to mainstream computing, marking a major shift in how people interacted with personal computers.</p>
+                <h4>Windows NT to Windows ME (1993-2000)</h4>
+                <p>The foundation era including Windows NT, 95, 98, and ME - systems that established modern Windows architecture and consumer computing.</p>
             </div>
 
             <div class="specs">
-                <h4>Windows 98</h4>
-                <p>An improved version of Windows 95 with better USB support, Internet Explorer integration, and enhanced multimedia capabilities that defined late 1990s computing.</p>
+                <h4>Windows 2000 to Server 2003 (2000-2003)</h4>
+                <p>The merging of consumer and business lines with Windows 2000 and XP, plus enterprise-grade Server 2003 for business infrastructure.</p>
             </div>
 
             <div class="specs">
-                <h4>Windows XP</h4>
-                <p>One of Microsoft's most successful operating systems, known for its stability, user-friendly interface, and longevity. It bridged consumer and professional computing needs.</p>
+                <h4>Windows Vista to Server 2008 (2006-2008)</h4>
+                <p>The controversial Vista introducing Aero interface and security enhancements, alongside the robust Server 2008 platform.</p>
+            </div>
+
+            <div class="specs">
+                <h4>Modern Windows (2012-Present)</h4>
+                <p>Windows 8's touch revolution through Windows 10's unification to Windows 11's refined experience with modern hardware requirements.</p>
             </div>
 
             <div class="info-box">
                 <h4>Getting Started</h4>
                 <p>Use the navigation menu above to select the Windows version you want to install. Each section contains a detailed video tutorial and comprehensive information about that specific operating system.</p>
+            </div>
+        </div>
+
+        <!-- Windows NT Section -->
+        <div id="winnt" class="content-section">
+            <h2>Windows NT Installation Tutorial</h2>
+            
+            <div class="video-container">
+                <iframe width="100%" height="500" src="" title="Windows NT Installation Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="video-placeholder">
+                    <p>📹 Video placeholder - Add your Windows NT installation tutorial video URL in the iframe src attribute above</p>
+                </div>
+            </div>
+
+            <h3>About Windows NT</h3>
+            <p>Windows NT (New Technology), first released in 1993, was Microsoft's ambitious project to create a professional, business-oriented operating system with enhanced security, stability, and networking capabilities. Unlike consumer Windows versions (95, 98, ME), NT was built from the ground up with a different kernel architecture focused on reliability and multi-user support. Windows NT 4.0, released in 1996, brought the familiar Windows 95 user interface to the NT platform.</p>
+
+            <p>Windows NT was the foundation for all modern Windows operating systems. It featured true preemptive multitasking, full 32-bit architecture, and robust security with user access controls. NT was particularly popular in business environments, scientific computing, and as a server platform. The NT line eventually evolved into Windows 2000 and XP, completely replacing the Windows 9x consumer line.</p>
+
+            <div class="specs">
+                <h4>System Requirements (NT 4.0)</h4>
+                <ul>
+                    <li><strong>Processor:</strong> Intel 486/33 MHz or higher (Pentium recommended)</li>
+                    <li><strong>RAM:</strong> Minimum 12 MB (16 MB recommended, 64-128 MB for VirtualBox)</li>
+                    <li><strong>Hard Disk:</strong> 110-150 MB minimum (2 GB recommended for VirtualBox)</li>
+                    <li><strong>Display:</strong> VGA or higher resolution</li>
+                    <li><strong>Additional:</strong> CD-ROM drive, network adapter (optional)</li>
+                </ul>
+            </div>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>NT Kernel:</strong> Robust, microkernel-based architecture for stability</li>
+                <li><strong>NTFS File System:</strong> Advanced file system with security and reliability features</li>
+                <li><strong>Preemptive Multitasking:</strong> Superior process management and stability</li>
+                <li><strong>Domain Support:</strong> Full integration with Windows domain networks</li>
+                <li><strong>Security:</strong> User-level security with access control lists (ACLs)</li>
+                <li><strong>Multi-processor Support:</strong> Ability to utilize multiple CPUs</li>
+                <li><strong>POSIX Compliance:</strong> Basic UNIX compatibility subsystem</li>
+                <li><strong>Workstation & Server Editions:</strong> Versions for different use cases</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Installation Tips</h4>
+                <p>Windows NT requires careful planning during installation. When setting up in VirtualBox, allocate 128 MB of RAM for smooth operation. The installation is text-based initially, then switches to graphical mode. You'll need to choose between FAT and NTFS file systems - NTFS is recommended for its advanced features. Plan for 45-60 minutes for complete installation.</p>
             </div>
         </div>
 
@@ -408,6 +467,96 @@
             </div>
         </div>
 
+        <!-- Windows ME Section -->
+        <div id="winme" class="content-section">
+            <h2>Windows ME Installation Tutorial</h2>
+            
+            <div class="video-container">
+                <iframe width="100%" height="500" src="" title="Windows ME Installation Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="video-placeholder">
+                    <p>📹 Video placeholder - Add your Windows ME installation tutorial video URL in the iframe src attribute above</p>
+                </div>
+            </div>
+
+            <h3>About Windows ME</h3>
+            <p>Windows Millennium Edition (ME), released in September 2000, was the last operating system in the Windows 9x line. It was designed as a home-focused OS to bridge the gap until Windows XP's release. ME introduced several multimedia and home networking features, including Windows Movie Maker, improved Windows Media Player, and System Restore. However, it was also controversial due to stability issues and the removal of real-mode DOS support.</p>
+
+            <p>Despite its troubled reputation, Windows ME introduced several innovations that became standard in later Windows versions. Its emphasis on digital media, automatic updates, and home networking features reflected the changing needs of home computer users at the turn of the millennium. It represented Microsoft's final attempt to evolve the Windows 95/98 codebase before transitioning entirely to the NT-based architecture.</p>
+
+            <div class="specs">
+                <h4>System Requirements</h4>
+                <ul>
+                    <li><strong>Processor:</strong> Pentium 150 MHz or higher</li>
+                    <li><strong>RAM:</strong> Minimum 32 MB (64-128 MB recommended for VirtualBox)</li>
+                    <li><strong>Hard Disk:</strong> 320-645 MB minimum (3 GB recommended for VirtualBox)</li>
+                    <li><strong>Display:</strong> VGA or higher resolution monitor</li>
+                    <li><strong>Additional:</strong> CD-ROM drive, sound card, mouse</li>
+                </ul>
+            </div>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>System Restore:</strong> Ability to roll back system changes (first Windows to include this)</li>
+                <li><strong>Windows Movie Maker:</strong> Built-in video editing software</li>
+                <li><strong>Windows Media Player 7:</strong> Enhanced multimedia player with skin support</li>
+                <li><strong>Home Networking Wizard:</strong> Simplified network setup for home users</li>
+                <li><strong>Image Preview:</strong> Thumbnail views in Windows Explorer</li>
+                <li><strong>AutoUpdate:</strong> Automatic Windows Update functionality</li>
+                <li><strong>Protected System Files:</strong> Prevented accidental deletion of critical files</li>
+                <li><strong>Universal Plug and Play:</strong> Improved device discovery and setup</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Installation Tips</h4>
+                <p>Windows ME can be temperamental in VirtualBox. Allocate at least 128 MB of RAM for better stability. The installation process takes 30-45 minutes. Some users report better results by disabling certain features during installation. Consider creating regular snapshots due to ME's stability reputation. Despite its issues, it's an interesting piece of Windows history worth exploring in a virtual environment.</p>
+            </div>
+        </div>
+
+        <!-- Windows 2000 Section -->
+        <div id="win2000" class="content-section">
+            <h2>Windows 2000 Installation Tutorial</h2>
+            
+            <div class="video-container">
+                <iframe width="100%" height="500" src="" title="Windows 2000 Installation Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="video-placeholder">
+                    <p>📹 Video placeholder - Add your Windows 2000 installation tutorial video URL in the iframe src attribute above</p>
+                </div>
+            </div>
+
+            <h3>About Windows 2000</h3>
+            <p>Windows 2000, released in February 2000, was the business-oriented successor to Windows NT 4.0 and a precursor to Windows XP. It brought the robust NT kernel to a wider audience with improved hardware support and a more refined user interface. Windows 2000 was available in Professional (workstation) and several Server editions, serving both desktop and server markets with distinction.</p>
+
+            <p>This operating system was highly regarded for its stability, security, and networking capabilities. It introduced Active Directory, a revolutionary directory service for managing networks. Windows 2000 also featured Plug and Play support, USB device support, and NTFS 3.0, making it far more user-friendly than its NT predecessors while maintaining professional-grade reliability. Many businesses continued using Windows 2000 for years after newer versions were released.</p>
+
+            <div class="specs">
+                <h4>System Requirements (Professional)</h4>
+                <ul>
+                    <li><strong>Processor:</strong> Pentium 133 MHz or higher (Pentium II recommended)</li>
+                    <li><strong>RAM:</strong> Minimum 64 MB (128 MB recommended, 256-512 MB for VirtualBox)</li>
+                    <li><strong>Hard Disk:</strong> 650+ MB minimum (5-10 GB recommended for VirtualBox)</li>
+                    <li><strong>Display:</strong> VGA or higher resolution</li>
+                    <li><strong>Additional:</strong> CD-ROM or DVD-ROM drive, network adapter</li>
+                </ul>
+            </div>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>Active Directory:</strong> Centralized directory service for network management</li>
+                <li><strong>Plug and Play:</strong> Automatic hardware detection and configuration</li>
+                <li><strong>NTFS 3.0:</strong> Advanced file system with encryption and disk quotas</li>
+                <li><strong>Group Policy:</strong> Centralized configuration management</li>
+                <li><strong>Enhanced Hardware Support:</strong> USB, IEEE 1394, and modern device drivers</li>
+                <li><strong>Windows Installer:</strong> Improved application installation and management</li>
+                <li><strong>IPSec:</strong> Built-in network security protocols</li>
+                <li><strong>Encrypting File System (EFS):</strong> File-level encryption for security</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Installation Tips</h4>
+                <p>Windows 2000 installs reliably in VirtualBox and is more stable than Windows ME. Allocate 512 MB of RAM for optimal performance. The installation has both text-mode and GUI phases, taking about 30-45 minutes total. Choose NTFS as your file system to access all features. Windows 2000 works well with VirtualBox Guest Additions for improved graphics and mouse integration.</p>
+            </div>
+        </div>
+
         <!-- Windows XP Section -->
         <div id="winxp" class="content-section">
             <h2>Windows XP Installation Tutorial</h2>
@@ -456,6 +605,285 @@
             <div class="info-box">
                 <h4>Installation Tips</h4>
                 <p>For optimal performance in VirtualBox, allocate at least 512 MB to 1 GB of RAM. The installation process takes 30-60 minutes. Windows XP benefits from Service Pack 3 (SP3), which includes numerous updates and improvements. Create a virtual hard disk of at least 20 GB to accommodate the OS, updates, and applications comfortably. Enable 3D acceleration in VirtualBox settings for better graphics performance.</p>
+            </div>
+        </div>
+
+        <!-- Windows Server 2003 Section -->
+        <div id="win2003" class="content-section">
+            <h2>Windows Server 2003 Installation Tutorial</h2>
+            
+            <div class="video-container">
+                <iframe width="100%" height="500" src="" title="Windows Server 2003 Installation Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="video-placeholder">
+                    <p>📹 Video placeholder - Add your Windows Server 2003 installation tutorial video URL in the iframe src attribute above</p>
+                </div>
+            </div>
+
+            <h3>About Windows Server 2003</h3>
+            <p>Windows Server 2003, released in April 2003, was Microsoft's server operating system built on the Windows XP/NT 5.2 codebase. It was designed specifically for server roles including file servers, print servers, domain controllers, web servers, and application servers. Server 2003 was widely praised for its stability, security improvements, and performance, making it one of Microsoft's most successful server platforms.</p>
+
+            <p>The operating system came in multiple editions including Standard, Enterprise, Datacenter, and Web Edition, each tailored for different deployment scenarios. Server 2003 introduced significant improvements to Active Directory, Internet Information Services (IIS) 6.0, and included enhanced clustering capabilities. It remained popular in enterprise environments for many years, with extended support continuing until 2015.</p>
+
+            <div class="specs">
+                <h4>System Requirements (Standard Edition)</h4>
+                <ul>
+                    <li><strong>Processor:</strong> Minimum 133 MHz (550 MHz recommended)</li>
+                    <li><strong>RAM:</strong> Minimum 128 MB (256 MB recommended, 512 MB-1 GB for VirtualBox)</li>
+                    <li><strong>Hard Disk:</strong> 1.5 GB minimum (10-20 GB recommended for VirtualBox)</li>
+                    <li><strong>Display:</strong> VGA or higher resolution</li>
+                    <li><strong>Additional:</strong> CD-ROM or DVD-ROM drive, network adapter</li>
+                </ul>
+            </div>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>Active Directory Improvements:</strong> Enhanced directory services with forest trusts</li>
+                <li><strong>IIS 6.0:</strong> Redesigned web server with improved security and reliability</li>
+                <li><strong>Volume Shadow Copy:</strong> Automatic backup of files and previous versions</li>
+                <li><strong>Terminal Services:</strong> Advanced remote desktop and application hosting</li>
+                <li><strong>.NET Framework:</strong> Built-in support for .NET applications</li>
+                <li><strong>Group Policy Management:</strong> Enhanced policy administration tools</li>
+                <li><strong>Windows Server Update Services:</strong> Centralized update management</li>
+                <li><strong>Clustering Services:</strong> High availability and load balancing</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Installation Tips</h4>
+                <p>Server 2003 requires more resources than desktop Windows versions. Allocate at least 1 GB of RAM in VirtualBox for smooth operation. Installation takes 45-60 minutes and requires product activation. Choose server roles carefully during setup. The default security configuration is more restrictive than desktop Windows, which enhances security but may require additional configuration for certain services.</p>
+            </div>
+        </div>
+
+        <!-- Windows Vista Section -->
+        <div id="winvista" class="content-section">
+            <h2>Windows Vista Installation Tutorial</h2>
+            
+            <div class="video-container">
+                <iframe width="100%" height="500" src="" title="Windows Vista Installation Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="video-placeholder">
+                    <p>📹 Video placeholder - Add your Windows Vista installation tutorial video URL in the iframe src attribute above</p>
+                </div>
+            </div>
+
+            <h3>About Windows Vista</h3>
+            <p>Windows Vista, released in January 2007, was a major redesign of the Windows operating system that introduced the Windows Aero visual style, User Account Control (UAC), and numerous security enhancements. Despite initial criticism for high hardware requirements and compatibility issues, Vista laid the groundwork for Windows 7 and introduced several features that became standard in modern Windows versions.</p>
+
+            <p>Vista featured a completely rewritten audio stack, improved search functionality with Windows Desktop Search, Internet Explorer 7, and Windows Media Player 11. The operating system emphasized security with features like UAC, Windows Defender, and improved Windows Firewall. While controversial at launch, Vista's architectural improvements and security features proved foundational for future Windows versions.</p>
+
+            <div class="specs">
+                <h4>System Requirements (Minimum/Recommended)</h4>
+                <ul>
+                    <li><strong>Processor:</strong> 800 MHz (1 GHz recommended, 2 GHz for VirtualBox)</li>
+                    <li><strong>RAM:</strong> 512 MB minimum (1 GB recommended, 2-4 GB for VirtualBox with Aero)</li>
+                    <li><strong>Hard Disk:</strong> 15 GB minimum (40-60 GB recommended for VirtualBox)</li>
+                    <li><strong>Display:</strong> SVGA (800x600) minimum, DirectX 9 graphics for Aero</li>
+                    <li><strong>Additional:</strong> DVD-ROM drive, audio output</li>
+                </ul>
+            </div>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>Windows Aero:</strong> Translucent glass design with live taskbar previews</li>
+                <li><strong>User Account Control:</strong> Enhanced security prompts for system changes</li>
+                <li><strong>Windows Sidebar:</strong> Widget platform for gadgets and information</li>
+                <li><strong>Windows Search:</strong> Instant file and content search</li>
+                <li><strong>Windows DVD Maker:</strong> Built-in DVD authoring software</li>
+                <li><strong>SuperFetch:</strong> Intelligent memory management and caching</li>
+                <li><strong>ReadyBoost:</strong> Use USB drives as additional cache memory</li>
+                <li><strong>Improved Networking:</strong> Network and Sharing Center for easy configuration</li>
+                <li><strong>BitLocker:</strong> Full disk encryption (Ultimate/Enterprise editions)</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Installation Tips</h4>
+                <p>Vista requires substantial resources for VirtualBox. Allocate at least 2 GB (4 GB preferred) of RAM and enable 3D acceleration for Aero effects. Installation takes 45-60 minutes from DVD. Service Pack 2 significantly improves performance and is highly recommended. Create a 40+ GB virtual hard disk. Vista works best on computers with good processors and ample RAM.</p>
+            </div>
+        </div>
+
+        <!-- Windows Server 2008 Section -->
+        <div id="win2008" class="content-section">
+            <h2>Windows Server 2008 Installation Tutorial</h2>
+            
+            <div class="video-container">
+                <iframe width="100%" height="500" src="" title="Windows Server 2008 Installation Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="video-placeholder">
+                    <p>📹 Video placeholder - Add your Windows Server 2008 installation tutorial video URL in the iframe src attribute above</p>
+                </div>
+            </div>
+
+            <h3>About Windows Server 2008</h3>
+            <p>Windows Server 2008, released in February 2008, was built on the same codebase as Windows Vista but designed specifically for server roles and enterprise environments. It introduced Server Core, a minimal installation option without a GUI, and significantly enhanced virtualization capabilities with Hyper-V. Server 2008 was well-received by IT professionals for its improved security, management tools, and reliability.</p>
+
+            <p>The operating system featured completely rewritten networking stack (TCP/IP Next Generation), failover clustering improvements, read-only domain controllers for branch offices, and PowerShell for advanced scripting. Server 2008 came in multiple editions including Standard, Enterprise, Datacenter, and Web Server, plus specialized editions for specific markets. It remained a popular choice for enterprise servers throughout its support lifecycle.</p>
+
+            <div class="specs">
+                <h4>System Requirements (Standard Edition)</h4>
+                <ul>
+                    <li><strong>Processor:</strong> 1 GHz x86 or 1.4 GHz x64 (2 GHz or faster recommended)</li>
+                    <li><strong>RAM:</strong> 512 MB minimum (2 GB recommended, 2-4 GB for VirtualBox)</li>
+                    <li><strong>Hard Disk:</strong> 10 GB minimum (40-80 GB recommended for VirtualBox)</li>
+                    <li><strong>Display:</strong> Super VGA (800x600) or higher</li>
+                    <li><strong>Additional:</strong> DVD-ROM drive, network adapter, keyboard, mouse</li>
+                </ul>
+            </div>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>Server Core:</strong> Minimal installation option without GUI for security</li>
+                <li><strong>Hyper-V:</strong> Built-in virtualization platform</li>
+                <li><strong>PowerShell:</strong> Advanced command-line and scripting environment</li>
+                <li><strong>IIS 7.0:</strong> Modular web server with improved management</li>
+                <li><strong>Server Manager:</strong> Centralized administration console</li>
+                <li><strong>Failover Clustering:</strong> Enhanced high-availability features</li>
+                <li><strong>Read-Only Domain Controllers:</strong> Secure domain controllers for branch offices</li>
+                <li><strong>Network Access Protection:</strong> Enhanced network security policies</li>
+                <li><strong>BitLocker:</strong> Server-grade disk encryption</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Installation Tips</h4>
+                <p>Server 2008 requires substantial resources. Allocate 2-4 GB of RAM in VirtualBox depending on intended server roles. Installation offers Full or Server Core options - choose Full for learning purposes. Installation takes 45-75 minutes. Enable virtualization extensions (VT-x/AMD-V) if you plan to use Hyper-V. Create snapshots before configuring server roles for easy rollback during learning.</p>
+            </div>
+        </div>
+
+        <!-- Windows 8 Section -->
+        <div id="win8" class="content-section">
+            <h2>Windows 8 Installation Tutorial</h2>
+            
+            <div class="video-container">
+                <iframe width="100%" height="500" src="" title="Windows 8 Installation Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="video-placeholder">
+                    <p>📹 Video placeholder - Add your Windows 8 installation tutorial video URL in the iframe src attribute above</p>
+                </div>
+            </div>
+
+            <h3>About Windows 8</h3>
+            <p>Windows 8, released in October 2012, represented a radical departure from traditional Windows interfaces with its touch-centric Metro design (later called Modern UI). It was designed to work seamlessly across tablets, laptops, and desktop computers, featuring a Start Screen with live tiles instead of the traditional Start Menu. While controversial among desktop users, Windows 8 introduced significant technical improvements under the hood.</p>
+
+            <p>The operating system featured faster boot times with Hybrid Boot technology, improved multitasking, better security with Secure Boot and Windows Defender integration, and the Windows Store for downloading apps. Windows 8 also introduced a new task manager, improved file operation dialogs, and native USB 3.0 support. Windows 8.1, released in 2013, addressed many initial criticisms and improved usability.</p>
+
+            <div class="specs">
+                <h4>System Requirements</h4>
+                <ul>
+                    <li><strong>Processor:</strong> 1 GHz or faster with PAE, NX, and SSE2</li>
+                    <li><strong>RAM:</strong> 1 GB for 32-bit, 2 GB for 64-bit (2-4 GB for VirtualBox)</li>
+                    <li><strong>Hard Disk:</strong> 16 GB for 32-bit, 20 GB for 64-bit (40-60 GB for VirtualBox)</li>
+                    <li><strong>Graphics:</strong> DirectX 9 with WDDM 1.0 driver</li>
+                    <li><strong>Display:</strong> 1024x768 minimum (1366x768 for Snap feature)</li>
+                </ul>
+            </div>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>Start Screen:</strong> Tile-based interface with live information updates</li>
+                <li><strong>Metro Apps:</strong> Full-screen touch-optimized applications</li>
+                <li><strong>Faster Boot:</strong> Hybrid Boot technology for quick startup</li>
+                <li><strong>Windows Store:</strong> Centralized app marketplace</li>
+                <li><strong>Improved Task Manager:</strong> Detailed resource monitoring and startup management</li>
+                <li><strong>File History:</strong> Automatic backup of personal files</li>
+                <li><strong>Storage Spaces:</strong> Flexible disk pooling and mirroring</li>
+                <li><strong>OneDrive Integration:</strong> Cloud storage built into the OS</li>
+                <li><strong>Refresh and Reset:</strong> Easy system recovery options</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Installation Tips</h4>
+                <p>Windows 8 installs quickly and runs efficiently in VirtualBox. Allocate 2-4 GB of RAM for smooth operation. Installation from ISO takes 20-30 minutes. Enable 3D acceleration for better graphics performance. Consider installing Windows 8.1 instead, as it includes significant improvements including a Start button. The touch-centric interface works in VirtualBox but is optimized for touch screens.</p>
+            </div>
+        </div>
+
+        <!-- Windows 10 Section -->
+        <div id="win10" class="content-section">
+            <h2>Windows 10 Installation Tutorial</h2>
+            
+            <div class="video-container">
+                <iframe width="100%" height="500" src="" title="Windows 10 Installation Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="video-placeholder">
+                    <p>📹 Video placeholder - Add your Windows 10 installation tutorial video URL in the iframe src attribute above</p>
+                </div>
+            </div>
+
+            <h3>About Windows 10</h3>
+            <p>Windows 10, released in July 2015, was Microsoft's attempt to unify the Windows experience across all device types while addressing criticisms of Windows 8. It brought back the Start Menu in a hybrid form combining traditional menu elements with live tiles. Windows 10 introduced "Windows as a Service," with regular feature updates delivered twice yearly, marking a shift from the traditional major version approach.</p>
+
+            <p>The operating system featured Cortana voice assistant, Microsoft Edge browser replacing Internet Explorer, virtual desktops, the Action Center for notifications, and Xbox integration for gaming. Windows 10 received continuous improvements through major updates like Anniversary Update, Creators Update, and subsequent feature releases. It became the most widely used Windows version and received support through October 2025.</p>
+
+            <div class="specs">
+                <h4>System Requirements</h4>
+                <ul>
+                    <li><strong>Processor:</strong> 1 GHz or faster processor or SoC</li>
+                    <li><strong>RAM:</strong> 1 GB for 32-bit, 2 GB for 64-bit (4 GB minimum for VirtualBox)</li>
+                    <li><strong>Hard Disk:</strong> 16 GB for 32-bit, 32 GB for 64-bit (60-100 GB for VirtualBox)</li>
+                    <li><strong>Graphics:</strong> DirectX 9 or later with WDDM 1.0 driver</li>
+                    <li><strong>Display:</strong> 800x600 minimum resolution</li>
+                </ul>
+            </div>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>Start Menu:</strong> Hybrid design combining classic menu with live tiles</li>
+                <li><strong>Microsoft Edge:</strong> New browser built on modern web standards</li>
+                <li><strong>Cortana:</strong> Digital assistant for voice commands and search</li>
+                <li><strong>Virtual Desktops:</strong> Multiple desktop workspaces for organization</li>
+                <li><strong>Action Center:</strong> Unified notifications and quick settings</li>
+                <li><strong>Windows Hello:</strong> Biometric authentication (face, fingerprint)</li>
+                <li><strong>DirectX 12:</strong> Advanced graphics API for gaming</li>
+                <li><strong>Windows Subsystem for Linux:</strong> Run Linux environments natively</li>
+                <li><strong>Continuum:</strong> Adaptive interface for 2-in-1 devices</li>
+                <li><strong>Windows Update for Business:</strong> Flexible update management</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Installation Tips</h4>
+                <p>Windows 10 requires more resources than previous versions. Allocate at least 4 GB of RAM (8 GB preferred) and 60-100 GB of disk space in VirtualBox. Installation takes 30-45 minutes from ISO. Enable EFI and TPM in VirtualBox settings for full feature support. Use the Media Creation Tool to download the latest version. Windows 10 receives regular updates, so plan for periodic update downloads and installations.</p>
+            </div>
+        </div>
+
+        <!-- Windows 11 Section -->
+        <div id="win11" class="content-section">
+            <h2>Windows 11 Installation Tutorial</h2>
+            
+            <div class="video-container">
+                <iframe width="100%" height="500" src="" title="Windows 11 Installation Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="video-placeholder">
+                    <p>📹 Video placeholder - Add your Windows 11 installation tutorial video URL in the iframe src attribute above</p>
+                </div>
+            </div>
+
+            <h3>About Windows 11</h3>
+            <p>Windows 11, released in October 2021, represents the latest evolution of Microsoft's operating system with a completely redesigned interface featuring centered taskbar and Start menu, rounded corners, and a more modern aesthetic. It introduced stricter hardware requirements, notably requiring TPM 2.0 and Secure Boot, emphasizing security and modern hardware support. Windows 11 focuses on productivity, gaming enhancements, and seamless integration with Microsoft services.</p>
+
+            <p>The operating system features Snap Layouts for advanced window management, Auto HDR and DirectStorage for gaming, integrated Microsoft Teams, Android app support through Windows Subsystem for Android, and redesigned Microsoft Store. Windows 11 continues the "Windows as a Service" model with regular feature updates. It represents Microsoft's vision for modern computing with emphasis on hybrid work, creativity, and gaming.</p>
+
+            <div class="specs">
+                <h4>System Requirements</h4>
+                <ul>
+                    <li><strong>Processor:</strong> 1 GHz or faster with 2+ cores on compatible 64-bit processor</li>
+                    <li><strong>RAM:</strong> 4 GB minimum (8-16 GB for VirtualBox)</li>
+                    <li><strong>Storage:</strong> 64 GB or larger (100+ GB recommended for VirtualBox)</li>
+                    <li><strong>System Firmware:</strong> UEFI, Secure Boot capable</li>
+                    <li><strong>TPM:</strong> Trusted Platform Module (TPM) version 2.0</li>
+                    <li><strong>Graphics:</strong> DirectX 12 compatible with WDDM 2.0 driver</li>
+                    <li><strong>Display:</strong> >9" diagonal, 720p resolution minimum</li>
+                </ul>
+            </div>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>Redesigned Interface:</strong> Centered Start menu and taskbar with modern design</li>
+                <li><strong>Snap Layouts:</strong> Advanced window arrangement and management</li>
+                <li><strong>Widgets:</strong> Personalized news and information panel</li>
+                <li><strong>Microsoft Teams Integration:</strong> Built-in communication platform</li>
+                <li><strong>Android Apps:</strong> Run Android applications via Amazon Appstore</li>
+                <li><strong>Auto HDR:</strong> Automatic HDR enhancement for games</li>
+                <li><strong>DirectStorage:</strong> Faster game loading times</li>
+                <li><strong>Virtual Desktops:</strong> Enhanced multi-desktop support</li>
+                <li><strong>Focus Sessions:</strong> Productivity tools with Do Not Disturb</li>
+                <li><strong>Windows Studio Effects:</strong> AI-enhanced video calling features</li>
+            </ul>
+
+            <div class="info-box">
+                <h4>Installation Tips</h4>
+                <p>Windows 11 has specific requirements that must be met in VirtualBox. Enable EFI boot, Secure Boot, and add a TPM 2.0 chip in VM settings. Allocate at least 8 GB of RAM and 100 GB of disk space for comfortable use. Installation takes 30-45 minutes. You may need to bypass hardware checks during installation in VirtualBox by using registry modifications or using Rufus to create modified installation media. Enable 3D acceleration for optimal performance of the new interface.</p>
             </div>
         </div>
 
