@@ -276,7 +276,23 @@
                 </div>
             </div>
             
-            <button class="nav-btn" onclick="showSection('tasks')">Tasks</button>
+            <div class="nav-item">
+                <button class="nav-btn" onclick="toggleDropdown(event)">
+                    Tasks
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div class="dropdown-menu">
+                    <div class="dropdown-item" onclick="showSection('task-dc')">Domain Controller</div>
+                    <div class="dropdown-item" onclick="showSection('task-user')">Domain User</div>
+                    <div class="dropdown-item" onclick="showSection('task-dhcp')">DHCP</div>
+                    <div class="dropdown-item" onclick="showSection('task-raid')">RAID</div>
+                    <div class="dropdown-item" onclick="showSection('task-fileserver')">File Server</div>
+                    <div class="dropdown-item" onclick="showSection('task-webserver')">Web Server</div>
+                    <div class="dropdown-item" onclick="showSection('task-gpo')">GPO</div>
+                    <div class="dropdown-item" onclick="showSection('task-wds')">WDS</div>
+                </div>
+            </div>
+            
             <button class="nav-btn" onclick="showSection('case-studies')">Case Studies</button>
             <button class="nav-btn" onclick="showSection('about')">About</button>
         </nav>
@@ -861,18 +877,12 @@
             </div>
         </div>
 
-        <!-- Tasks Section -->
-        <div id="tasks" class="content-section">
-            <h2>Windows Server 2008 Tasks</h2>
-
-            <p>This section follows the same format as the OS installation pages. Every task includes a YouTube embed area and a detailed explanation of what the service does, where it is used, and why it is important in a real Windows Server 2008 environment.</p>
-
-            <div class="info-box">
-                <h4>Lab Scope</h4>
-                <p>All tasks were configured in Windows Server 2008. WDS was configured on Server 2008 and used to deploy connected Windows 7 and Windows XP client machines over the network.</p>
-            </div>
-
-            <h3>Domain Controller Task</h3>
+        <!-- Task Sections -->
+        <!-- Domain Controller -->
+        <div id="task-dc" class="content-section">
+            <h2>Domain Controller Task</h2>
+            
+            <div class="video-container">
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
   <iframe 
       src="https://drive.google.com/file/d/13SMw_prORIQlkfEEq9ATEMD4-EpNNs5K/preview" 
@@ -881,8 +891,13 @@
       allow="autoplay; fullscreen" 
       allowfullscreen>
   </iframe>
-</div>            
-            <p>The Domain Controller is the core of a Windows enterprise network because it hosts Active Directory Domain Services. Its primary use is to centrally manage identity and access for users, computers, and services. Instead of creating local accounts on each machine, administrators create and manage everything from one directory. This is important because it improves security consistency, enables centralized login, simplifies permission management, and supports scalable network administration as the lab grows.</p>
+</div>
+            </div>
+
+            <h3>About Domain Controller</h3>
+            <p>The Domain Controller is the core of a Windows enterprise network because it hosts Active Directory Domain Services. Its primary use is to centrally manage identity and access for users, computers, and services. Instead of creating local accounts on each machine, administrators create and manage everything from one directory.</p>
+            
+            <p>This is important because it improves security consistency, enables centralized login, simplifies permission management, and supports scalable network administration as the lab grows. In a Windows Server 2008 environment, the domain controller provides the foundation for all identity-based services.</p>
 
             <div class="specs">
                 <h4>Why It Matters</h4>
@@ -893,7 +908,17 @@
                 </ul>
             </div>
 
-            <h3>Domain User Task</h3>
+            <div class="info-box">
+                <h4>💡 Key Considerations</h4>
+                <p>Domain Controllers should be properly backed up and secured. Always use strong passwords for domain admin accounts and regularly monitor domain controller logs for security events.</p>
+            </div>
+        </div>
+
+        <!-- Domain User -->
+        <div id="task-user" class="content-section">
+            <h2>Domain User Task</h2>
+            
+            <div class="video-container">
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
   <iframe
     src="https://drive.google.com/file/d/1I-7q5xeS1WT7nbw_1CKJVxpMecfjIg78/preview"
@@ -902,8 +927,13 @@
     allow="autoplay; fullscreen"
     allowfullscreen>
   </iframe>
-</div>            
-            <p>Domain user management is used to create standardized user identities that can log in from any domain-joined client. In this task, users can be grouped by role and assigned only the permissions they need. This is essential for security and administration because user control is no longer scattered across separate computers. It also improves accountability through centralized auditing and makes onboarding or account changes much faster.</p>
+</div>
+            </div>
+
+            <h3>About Domain User Management</h3>
+            <p>Domain user management is used to create standardized user identities that can log in from any domain-joined client. In this task, users can be grouped by role and assigned only the permissions they need. This is essential for security and administration because user control is no longer scattered across separate computers.</p>
+            
+            <p>It also improves accountability through centralized auditing and makes onboarding or account changes much faster. Domain users are the foundation of enterprise access control in Active Directory environments.</p>
 
             <div class="specs">
                 <h4>Why It Matters</h4>
@@ -914,7 +944,17 @@
                 </ul>
             </div>
 
-            <h3>DHCP Task</h3>
+            <div class="info-box">
+                <h4>💡 Best Practices</h4>
+                <p>Use security groups to manage permissions rather than assigning rights directly to users. This makes administration more scalable and reduces the risk of privilege creep.</p>
+            </div>
+        </div>
+
+        <!-- DHCP -->
+        <div id="task-dhcp" class="content-section">
+            <h2>DHCP Task</h2>
+            
+            <div class="video-container">
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
   <iframe 
       src="https://drive.google.com/file/d/1YzIpQ4GNZpHH2sHTvxHfzlAJFBbUTsJv/preview" 
@@ -923,8 +963,13 @@
       allow="autoplay; fullscreen" 
       allowfullscreen>
   </iframe>
-</div>            
-            <p>DHCP automatically provides IP addresses, subnet masks, default gateways, and DNS settings to client systems. Its use is to remove manual IP configuration and reduce configuration errors when many clients are connected. This is especially useful in lab and production environments where machines are frequently added, removed, or reimaged. DHCP is important because it keeps addressing organized, avoids duplicate IP conflicts, and helps services like WDS and domain join work reliably.</p>
+</div>
+            </div>
+
+            <h3>About DHCP</h3>
+            <p>DHCP (Dynamic Host Configuration Protocol) automatically provides IP addresses, subnet masks, default gateways, and DNS settings to client systems. Its use is to remove manual IP configuration and reduce configuration errors when many clients are connected. This is especially useful in lab and production environments where machines are frequently added, removed, or reimaged.</p>
+            
+            <p>DHCP is important because it keeps addressing organized, avoids duplicate IP conflicts, and helps services like WDS and domain join work reliably. Without DHCP, network administration becomes significantly more complex and error-prone.</p>
 
             <div class="specs">
                 <h4>Why It Matters</h4>
@@ -935,9 +980,24 @@
                 </ul>
             </div>
 
-            <h3>RAID Task</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/vi7lXuBfE4g?si=KcLTY8f-zHqC_EI6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            
-            <p>RAID is used to combine disks for data redundancy, performance, or both, depending on the selected RAID level. In server infrastructure, storage reliability is critical because service interruptions can affect authentication, file access, and deployment services. Implementing RAID provides fault tolerance so that a single disk failure does not immediately cause data loss or downtime. It is an important foundation for resilient server operations and safer long-term storage.</p>
+            <div class="info-box">
+                <h4>💡 Configuration Tips</h4>
+                <p>Plan your DHCP scope ranges carefully to avoid conflicts with static IP assignments. Use DHCP reservations for servers and network devices that need consistent IP addresses.</p>
+            </div>
+        </div>
+
+        <!-- RAID -->
+        <div id="task-raid" class="content-section">
+            <h2>RAID Task</h2>
+            
+            <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/vi7lXuBfE4g?si=KcLTY8f-zHqC_EI6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <h3>About RAID</h3>
+            <p>RAID (Redundant Array of Independent Disks) is used to combine disks for data redundancy, performance, or both, depending on the selected RAID level. In server infrastructure, storage reliability is critical because service interruptions can affect authentication, file access, and deployment services.</p>
+            
+            <p>Implementing RAID provides fault tolerance so that a single disk failure does not immediately cause data loss or downtime. It is an important foundation for resilient server operations and safer long-term storage. Different RAID levels (0, 1, 5, 10) offer different trade-offs between performance, redundancy, and capacity.</p>
 
             <div class="specs">
                 <h4>Why It Matters</h4>
@@ -948,7 +1008,17 @@
                 </ul>
             </div>
 
-            <h3>File Server Task</h3>
+            <div class="info-box">
+                <h4>💡 RAID Considerations</h4>
+                <p>RAID is not a backup solution - it protects against hardware failure but not data corruption or deletion. Always maintain separate backups of critical data.</p>
+            </div>
+        </div>
+
+        <!-- File Server -->
+        <div id="task-fileserver" class="content-section">
+            <h2>File Server Task</h2>
+            
+            <div class="video-container">
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
          <iframe 
             src="https://drive.google.com/file/d/12XqiybjUodL3IHd3PnWgrbJ8f5BzXRoU/preview" 
@@ -957,8 +1027,13 @@
            allow="autoplay; fullscreen" 
            allowfullscreen>
          </iframe>
-    </div>            
-            <p>The file server role is used to centralize shared folders and departmental data. Rather than storing files on individual endpoints, users access controlled network shares with permission-based access. This is important because it improves collaboration, standardizes where data is stored, and simplifies backup and recovery strategies. Combined with domain accounts and groups, file access can be tightly controlled and audited for better security compliance.</p>
+    </div>
+            </div>
+
+            <h3>About File Server</h3>
+            <p>The file server role is used to centralize shared folders and departmental data. Rather than storing files on individual endpoints, users access controlled network shares with permission-based access. This is important because it improves collaboration, standardizes where data is stored, and simplifies backup and recovery strategies.</p>
+            
+            <p>Combined with domain accounts and groups, file access can be tightly controlled and audited for better security compliance. File servers are essential infrastructure components in enterprise environments, providing centralized storage that can be properly secured and managed.</p>
 
             <div class="specs">
                 <h4>Why It Matters</h4>
@@ -969,9 +1044,24 @@
                 </ul>
             </div>
 
-            <h3>Web Server Task</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/xrO5I_jRAq4?si=8HgCRAej0lIV3mAe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>            
-            <p>The web server role (IIS) is used to host web-based resources such as internal portals, test websites, application dashboards, and service pages. In a server lab, it demonstrates how infrastructure can deliver services to users through a browser interface. This task is important because many enterprise systems rely on web applications, and understanding IIS setup, bindings, and access control is key for practical server administration.</p>
+            <div class="info-box">
+                <h4>💡 File Server Tips</h4>
+                <p>Use NTFS permissions in combination with share permissions for granular access control. Implement regular backups and consider enabling Shadow Copies for version recovery.</p>
+            </div>
+        </div>
+
+        <!-- Web Server -->
+        <div id="task-webserver" class="content-section">
+            <h2>Web Server Task</h2>
+            
+            <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/xrO5I_jRAq4?si=8HgCRAej0lIV3mAe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+            <h3>About Web Server (IIS)</h3>
+            <p>The web server role (IIS - Internet Information Services) is used to host web-based resources such as internal portals, test websites, application dashboards, and service pages. In a server lab, it demonstrates how infrastructure can deliver services to users through a browser interface.</p>
+            
+            <p>This task is important because many enterprise systems rely on web applications, and understanding IIS setup, bindings, and access control is key for practical server administration. IIS 7.0 in Windows Server 2008 introduced a modular architecture that improves security and performance.</p>
 
             <div class="specs">
                 <h4>Why It Matters</h4>
@@ -982,9 +1072,24 @@
                 </ul>
             </div>
 
-            <h3>GPO Task</h3>
+            <div class="info-box">
+                <h4>💡 IIS Best Practices</h4>
+                <p>Always disable unnecessary IIS modules to reduce attack surface. Use separate application pools for different websites to improve isolation and stability.</p>
+            </div>
+        </div>
+
+        <!-- GPO -->
+        <div id="task-gpo" class="content-section">
+            <h2>Group Policy (GPO) Task</h2>
+            
+            <div class="video-container">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/VCpQ3-wW6E0?si=Nx1id7TG6ZB54oMs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <p>Group Policy Objects (GPO) are used to apply centralized settings to domain users and computers. This includes password complexity, desktop restrictions, scripts, software behavior, and security baselines. GPO is one of the most powerful tools in Active Directory because it enforces consistent standards at scale. It is important for reducing manual setup on client machines and for maintaining compliance and security posture across the environment.</p>
+            </div>
+
+            <h3>About Group Policy Objects</h3>
+            <p>Group Policy Objects (GPO) are used to apply centralized settings to domain users and computers. This includes password complexity, desktop restrictions, scripts, software behavior, and security baselines. GPO is one of the most powerful tools in Active Directory because it enforces consistent standards at scale.</p>
+            
+            <p>It is important for reducing manual setup on client machines and for maintaining compliance and security posture across the environment. Well-designed GPO structure can significantly reduce administrative overhead while improving security and standardization.</p>
 
             <div class="specs">
                 <h4>Why It Matters</h4>
@@ -995,9 +1100,24 @@
                 </ul>
             </div>
 
-            <h3>WDS Task (Windows 7 and Windows XP Deployment)</h3>
+            <div class="info-box">
+                <h4>💡 GPO Tips</h4>
+                <p>Test GPOs in a separate OU before applying them broadly. Use GPO comments and naming conventions to document the purpose of each policy for future administrators.</p>
+            </div>
+        </div>
+
+        <!-- WDS -->
+        <div id="task-wds" class="content-section">
+            <h2>WDS Task (Windows Deployment Services)</h2>
+            
+            <div class="video-container">
             <iframe width="560" height="315" src="" title="WDS Task Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <p>Windows Deployment Services (WDS) on Server 2008 is used for network-based operating system installation using PXE boot. In this lab, WDS was configured to deploy connected Windows 7 and Windows XP client machines from centralized boot and install images. This is highly valuable because it removes repetitive manual installation steps, speeds up client provisioning, and ensures consistent OS setup for every machine deployed from the server.</p>
+            </div>
+
+            <h3>About Windows Deployment Services</h3>
+            <p>Windows Deployment Services (WDS) on Server 2008 is used for network-based operating system installation using PXE boot. In this lab, WDS was configured to deploy connected Windows 7 and Windows XP client machines from centralized boot and install images.</p>
+            
+            <p>This is highly valuable because it removes repetitive manual installation steps, speeds up client provisioning, and ensures consistent OS setup for every machine deployed from the server. WDS is essential in enterprise environments where rapid deployment and standardization are critical.</p>
 
             <div class="specs">
                 <h4>Why It Matters</h4>
@@ -1006,6 +1126,11 @@
                     <li>Consistent Windows 7 and XP client provisioning</li>
                     <li>Reduced installation time and lower administrative effort</li>
                 </ul>
+            </div>
+
+            <div class="info-box">
+                <h4>💡 WDS Configuration Notes</h4>
+                <p>WDS requires DHCP and DNS to function properly. The WDS server itself should have a static IP address. In this lab, WDS was used to deploy Windows 7 and Windows XP clients over the network.</p>
             </div>
         </div>
 
