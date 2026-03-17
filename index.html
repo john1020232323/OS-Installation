@@ -199,6 +199,23 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
+        .video-embed {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #111;
+        }
+
+        .video-embed iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
         .video-disclaimer {
             margin-top: 10px;
             font-size: 0.9em;
@@ -228,6 +245,44 @@
         .specs h4 {
             color: #667eea;
             margin-bottom: 10px;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin: 25px 0;
+        }
+
+        .case-card {
+            background: #fff;
+            border: 1px solid #e3e7ff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.08);
+        }
+
+        .case-card h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+
+        .video-note {
+            margin-top: 12px;
+            font-size: 0.95em;
+            color: #555;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 25px;
+            }
+
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
 
         footer {
@@ -293,7 +348,24 @@
                 </div>
             </div>
             
-            <button class="nav-btn" onclick="showSection('case-studies')">Case Studies</button>
+            <div class="nav-item">
+                <button class="nav-btn" onclick="toggleDropdown(event)">
+                    Case Study
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div class="dropdown-menu">
+                    <div class="dropdown-item" onclick="showSection('case-studies')">Overview</div>
+                    <div class="dropdown-item" onclick="showSection('case-dc')">Domain Controller</div>
+                    <div class="dropdown-item" onclick="showSection('case-user')">Add Domain User</div>
+                    <div class="dropdown-item" onclick="showSection('case-dhcp')">DHCP Server</div>
+                    <div class="dropdown-item" onclick="showSection('case-files')">File Services</div>
+                    <div class="dropdown-item" onclick="showSection('case-raid')">RAID Services</div>
+                    <div class="dropdown-item" onclick="showSection('case-remote')">Task 6: Remote Desktop</div>
+                    <div class="dropdown-item" onclick="showSection('case-webserver')">Web Server</div>
+                    <div class="dropdown-item" onclick="showSection('case-gpo')">GPO</div>
+                    <div class="dropdown-item" onclick="showSection('case-wds')">WDS</div>
+                </div>
+            </div>
             <button class="nav-btn" onclick="showSection('about')">About</button>
         </nav>
 
@@ -1136,80 +1208,276 @@
 
         <!-- Case Studies Section -->
         <div id="case-studies" class="content-section">
-            <h2>Case Studies</h2>
-            
-            <p>Explore real-world scenarios and practical applications of Windows OS installations in VirtualBox. These case studies demonstrate how virtualization technology is used in various professional and educational contexts.</p>
+            <h2>Windows Server 2008 Domain Case Study</h2>
 
-            <div class="specs">
-                <h4>Case Study 1: Legacy Software Testing</h4>
-                <h3>Background</h3>
-                <p>A financial services company needed to maintain access to a legacy accounting application that only runs on Windows 98. The application contains critical historical data spanning 15 years but is incompatible with modern operating systems.</p>
-                
-                <h3>Solution</h3>
-                <p>The IT department implemented a VirtualBox solution running Windows 98 on modern hardware. This allowed employees to access the legacy application when needed while using contemporary systems for daily tasks.</p>
-                
-                <h3>Outcomes</h3>
-                <ul>
-                    <li>Successfully preserved access to historical financial records</li>
-                    <li>Eliminated need to maintain physical legacy hardware</li>
-                    <li>Reduced costs by 70% compared to maintaining dedicated old computers</li>
-                    <li>Improved data backup and disaster recovery capabilities</li>
-                </ul>
-                
-                <h3>Key Lessons</h3>
-                <p>Virtualization provides an effective bridge between legacy applications and modern infrastructure, ensuring business continuity while reducing maintenance overhead.</p>
+            <p>This case study is based on the TUP Taguig Windows Server 2008 domain deployment for the <strong>tupt.edu.ph</strong> environment. The requirement is not just to install a server, but to build an integrated campus lab setup that covers identity, networking, storage, policy enforcement, workstation restrictions, and operating system deployment.</p>
+
+            <p>The pages in this dropdown break the case study into separate deliverables so each recorded task can have its own description and embedded video. The content below follows the assignment brief in <strong>os_case-study-2526.txt</strong> and matches the task sequence shown in your uploaded screenshot.</p>
+
+            <div class="case-grid">
+                <div class="case-card">
+                    <h4>Identity and Access</h4>
+                    <p>Domain Controller and Add Domain User establish the <strong>tupt.edu.ph</strong> directory, OUs, user accounts, logon limits, and workstation assignments.</p>
+                </div>
+                <div class="case-card">
+                    <h4>Network Services</h4>
+                    <p>DHCP and WDS provide automatic client addressing and network-based deployment for Windows XP and Windows 7 workstations.</p>
+                </div>
+                <div class="case-card">
+                    <h4>Storage and Sharing</h4>
+                    <p>File Services and RAID cover secure departmental shares, mapped folders, storage quotas, and fault-tolerant disk layouts.</p>
+                </div>
+                <div class="case-card">
+                    <h4>Control and Support</h4>
+                    <p>Remote Desktop and GPO enforce the required workstation controls, operating restrictions, and desktop standards across the lab.</p>
+                </div>
             </div>
 
             <div class="specs">
-                <h4>Case Study 2: Computer Science Education</h4>
-                <h3>Background</h3>
-                <p>A university's computer science department wanted to teach students about operating system evolution and architecture without requiring multiple physical computers for each student.</p>
-                
-                <h3>Solution</h3>
-                <p>The department created a virtual lab environment where students could install and experiment with Windows 95, 98, and XP. Each student received VirtualBox on their laptop and installation media for all three operating systems.</p>
-                
-                <h3>Outcomes</h3>
+                <h4>Case Study Coverage</h4>
                 <ul>
-                    <li>Students gained hands-on experience with OS installation procedures</li>
-                    <li>Reduced lab equipment costs by 60%</li>
-                    <li>Enabled students to complete assignments from anywhere</li>
-                    <li>Facilitated direct comparison of OS architectures and features</li>
-                    <li>Improved understanding of virtualization technology</li>
+                    <li><strong>Domain:</strong> Configure <strong>tupt.edu.ph</strong> as the Windows Server 2008 domain</li>
+                    <li><strong>Users:</strong> Create OUs and real-name accounts for academic departments, sections, and administrative offices</li>
+                    <li><strong>Client Control:</strong> Enforce workstation assignment, logon hours, and password rotation requirements</li>
+                    <li><strong>Networking:</strong> Implement DHCP scopes for <strong>172.31.0.0/16</strong> and <strong>10.0.0.0/8</strong> with exclusions and 8-hour leases</li>
+                    <li><strong>Storage:</strong> Build public and restricted shares with quotas, file restrictions, and mapped drives</li>
+                    <li><strong>Policy:</strong> Apply wallpapers, lockout rules, Control Panel restrictions, removable storage blocks, and other GPO controls</li>
+                    <li><strong>Deployment:</strong> Use WDS to deploy Windows XP and Windows 7 to requesting clients</li>
                 </ul>
-                
-                <h3>Key Lessons</h3>
-                <p>Virtual machines provide an ideal platform for teaching OS concepts, allowing students to experiment safely without risk to physical hardware or host systems.</p>
-            </div>
-
-            <div class="specs">
-                <h4>Case Study 3: Software Development and Testing</h4>
-                <h3>Background</h3>
-                <p>A software development company needed to ensure their application worked correctly across multiple Windows versions, including legacy systems still used by some clients.</p>
-                
-                <h3>Solution</h3>
-                <p>The QA team established a testing environment using VirtualBox with snapshots of Windows 95, 98, and XP. Developers could quickly test their applications across all platforms and roll back to clean system states between tests.</p>
-                
-                <h3>Outcomes</h3>
-                <ul>
-                    <li>Identified and fixed compatibility issues before release</li>
-                    <li>Reduced testing time by 50% through snapshot technology</li>
-                    <li>Maintained support for clients still using older Windows versions</li>
-                    <li>Created reproducible test environments for bug investigations</li>
-                    <li>Improved software quality and customer satisfaction</li>
-                </ul>
-                
-                <h3>Key Lessons</h3>
-                <p>Virtual machines with snapshot capabilities are invaluable for software testing, providing consistent, reproducible environments that can be quickly reset to known states.</p>
             </div>
 
             <div class="info-box">
-                <h4>Discussion Points</h4>
-                <p>Consider these questions as you review the case studies:</p>
+                <h4>Video Requirement</h4>
+                <p>Each task page includes a YouTube embed area so you can attach the recorded walkthrough for that specific deliverable. Where the final YouTube video ID is not yet available, the section includes a ready-to-replace embed URL pattern.</p>
+            </div>
+        </div>
+
+        <div id="case-dc" class="content-section">
+            <h2>Case Study: Domain Controller</h2>
+
+            <div class="video-container">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/gSzQAa8RQ-U?si=YaNjcaOBN1PBEfEU" title="Domain Controller Case Study Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <h3>Description</h3>
+            <p>This page documents the deployment of the Windows Server 2008 domain controller for <strong>tupt.edu.ph</strong>. The server acts as the central authentication point for users, computers, and administrators, and it provides the Active Directory structure required by the remaining tasks in the case study.</p>
+
+            <p>The Domain Controller must be configured early because domain users, Group Policy, file access, workstation restrictions, and Windows Deployment Services all depend on a functioning Active Directory environment. In this case study, the domain controller is the administrative core of the whole campus lab.</p>
+
+            <div class="specs">
+                <h4>Required Outcomes</h4>
                 <ul>
-                    <li>How does virtualization solve real-world business and educational challenges?</li>
-                    <li>What are the cost and efficiency benefits of virtual machines?</li>
-                    <li>How might these case studies apply to your own field of study or work?</li>
-                    <li>What other scenarios might benefit from legacy OS virtualization?</li>
+                    <li>Promote the server as a domain controller for <strong>tupt.edu.ph</strong></li>
+                    <li>Install the directory service foundation for centralized authentication</li>
+                    <li>Prepare the domain structure that will contain academic and administrative OUs</li>
+                    <li>Support later services such as DHCP authorization, file sharing permissions, and GPO linkage</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="case-user" class="content-section">
+            <h2>Case Study: Add Domain User</h2>
+
+            <div class="video-container">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/3Ny1F0DKcTE?si=4HJdnvQeNr2nJTGr" title="Add Domain User Case Study Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <h3>Description</h3>
+            <p>This case-study page covers the creation of domain users, organizational units, and access boundaries for the academic and administrative groups listed in the brief. The assignment requires four academic departments, multiple technology sections, and eight administrative offices to be represented properly inside Active Directory.</p>
+
+            <p>Users must be created using real names, placed in the correct OU, and controlled through account settings that match the case-study rules. Academic users are limited to the required logon window, administrative users have their own allowed time range, and both groups must only sign in to workstations assigned to their department or office.</p>
+
+            <div class="specs">
+                <h4>Required Outcomes</h4>
+                <ul>
+                    <li>Create OUs for each technology section and office such as Information Technology, Electronics, Registrar, and Research</li>
+                    <li>Add real-name domain accounts for students and staff in their proper locations</li>
+                    <li>Restrict users so they can log on only to their assigned Windows XP or Windows 7 workstations</li>
+                    <li>Set password-change enforcement every 30 days</li>
+                    <li>Apply academic logon hours of 7:30 AM to 8:45 AM and administrative logon hours of 7:00 AM to 7:00 PM</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="case-dhcp" class="content-section">
+            <h2>Case Study: DHCP Server</h2>
+
+            <div class="video-container">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/C2KZ-etQlMM?si=-unnu9MqWTnJPEKQ" title="DHCP Server Case Study Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <h3>Description</h3>
+            <p>This page presents the Dynamic Host Configuration Protocol setup required by the case study. The server must distribute valid addressing for the <strong>172.31.0.0/16</strong> and <strong>10.0.0.0/8</strong> networks while reserving the first 30 and last 30 valid host addresses in each usable range.</p>
+
+            <p>The DHCP service also has to support client access to the domain and deployment environment by supplying a valid router address, the local server as DNS, and additional public DNS entries for Google and OpenDNS. An 8-hour lease period keeps address reuse controlled inside the lab setup.</p>
+
+            <div class="specs">
+                <h4>Required Outcomes</h4>
+                <ul>
+                    <li>Create scopes for the required IP blocks</li>
+                    <li>Exclude the first 30 and last 30 valid IP addresses from distribution</li>
+                    <li>Configure an 8-hour lease duration</li>
+                    <li>Set the router IP to a valid address for the subnet</li>
+                    <li>Publish DNS settings that include the server, Google DNS, and OpenDNS</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="case-files" class="content-section">
+            <h2>Case Study: File Services</h2>
+
+            <div class="video-container">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/ccgf2VCdUTY?si=K2ttwuPcyfyIMgUA" title="File Services Case Study Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <h3>Description</h3>
+            <p>This section documents the departmental file-sharing environment for the university domain. Each section or office must have its own public read/write folder, while cross-department access is blocked so users cannot open shares that do not belong to their assigned area.</p>
+
+            <p>The design also requires a university-wide public folder, an installer repository restricted to administrators, content rules for department folders, 1 GB quotas, and shared-drive mapping on each client workstation. This makes the file server both a collaboration service and an access-control exercise.</p>
+
+            <div class="specs">
+                <h4>Required Outcomes</h4>
+                <ul>
+                    <li>Create one read/write public folder for each department, section, and office</li>
+                    <li>Block domain users from opening folders outside their own department or office</li>
+                    <li>Create a university public folder that all domain users can access</li>
+                    <li>Create an installer folder accessible only to the administrator</li>
+                    <li>Allow only office documents in most folders and block executable files in the Information Technology folder</li>
+                    <li>Apply a 1 GB storage quota to each folder and map the shares on client machines</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="case-raid" class="content-section">
+            <h2>Case Study: RAID Services</h2>
+
+            <div class="video-container">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/XARZAPtEAo4?si=k_qL38rJCs-wAdnY" title="RAID Services Case Study Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <h3>Description</h3>
+            <p>This case-study page covers the storage configurations requested in the assignment: stripped, mirrored, spanned, and RAID-5. The purpose of this task is to demonstrate how Windows Server 2008 can organize disks for performance, fault tolerance, or larger logical volumes depending on the operational requirement.</p>
+
+            <p>Because the same server environment handles authentication, shared files, and deployment services, storage planning matters. The RAID activity shows the difference between speed-focused layouts and resilient layouts, which is directly relevant when deciding how to host shared university resources.</p>
+
+            <div class="specs">
+                <h4>Required Outcomes</h4>
+                <ul>
+                    <li>Create a stripped volume</li>
+                    <li>Create a mirrored volume</li>
+                    <li>Create a spanned volume</li>
+                    <li>Create a RAID-5 volume</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="case-remote" class="content-section">
+            <h2>Case Study: Task 6 Remote Desktop</h2>
+
+            <div class="video-container">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/0cg0XTUAxZg?si=t0S0_sN7thL_vtK0" title="Remote Desktop Case Study Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <h3>Description</h3>
+            <p>Task 6 requires Remote Desktop to be enabled on all applicable workstations. In the context of this case study, that means preparing client systems so administrators or authorized staff can connect remotely for support, checking, and demonstration purposes without needing physical access to each workstation.</p>
+
+            <p>This task strengthens the manageability of the laboratory setup because it reduces the time needed to assist client machines after domain join, user provisioning, policy application, or software deployment. It also supports the testing and validation part of the project by making workstation access more flexible.</p>
+
+            <div class="specs">
+                <h4>Required Outcomes</h4>
+                <ul>
+                    <li>Enable Remote Desktop on all applicable client workstations</li>
+                    <li>Confirm that the setting remains compatible with the domain environment</li>
+                    <li>Demonstrate successful remote access for administration or support</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="case-webserver" class="content-section">
+            <h2>Case Study: Web Server</h2>
+
+            <div class="video-container">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/xrO5I_jRAq4?si=8HgCRAej0lIV3mAe" title="Web Server Case Study Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <h3>Description</h3>
+            <p>This page documents the IIS 7 web server requirement in the Windows Server 2008 case study. The assignment requires the server to host a simple university website and also provide separate department websites through subdirectories created under the <strong>wwwroot</strong> folder.</p>
+
+            <p>In this lab, the web server demonstrates how the domain environment can deliver information services through a browser while keeping the structure organized by department. It also supports the project submission requirement that the videos and resulting website be published and validated as part of the final deliverable.</p>
+
+            <div class="specs">
+                <h4>Required Outcomes</h4>
+                <ul>
+                    <li>Install and configure IIS 7 on Windows Server 2008</li>
+                    <li>Create a simple university homepage for the server</li>
+                    <li>Create subdirectories in <strong>wwwroot</strong> for each department website</li>
+                    <li>Demonstrate that the hosted pages are reachable and organized correctly</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="case-gpo" class="content-section">
+            <h2>Case Study: Group Policy Objects</h2>
+
+            <div class="video-container">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/GjtEpgQG-Kw?si=WCLrIZHc99P8iQLs" title="GPO Case Study Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <h3>Description</h3>
+            <p>This page records the Group Policy implementation for the Windows Server 2008 domain. The assignment requires both environment customization and security restriction, including department-specific wallpapers, account lockout settings, browser title changes, Start Menu restrictions, Control Panel blocking, Command Prompt blocking, and removable storage denial.</p>
+
+            <p>GPO is where the case study turns a basic domain into a managed campus environment. These policies enforce standard behavior for regular users while still allowing IT administrators to retain the necessary control for maintenance and review.</p>
+
+            <div class="specs">
+                <h4>Required Outcomes</h4>
+                <ul>
+                    <li>Assign a desktop wallpaper for each department</li>
+                    <li>Set minimum password length to at least 12 characters and maximum password age to 42 days</li>
+                    <li>Configure account lockout duration, threshold, and reset counter values to 30 minutes, 3 attempts, and 30 minutes</li>
+                    <li>Apply restrictions for Control Panel, Command Prompt, Registry Tools, Windows Update access, network connections, Run menu, Help menu, Task Manager, and removable storage</li>
+                    <li>Limit access to GPO settings so they are handled only by IT administrators</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="case-wds" class="content-section">
+            <h2>Case Study: Windows Deployment Services</h2>
+
+            <div class="video-container">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_WDS" title="WDS Case Study Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p class="video-note">Replace <strong>VIDEO_ID_WDS</strong> with the unlisted YouTube video ID for the WDS deployment recording.</p>
+            </div>
+
+            <h3>Description</h3>
+            <p>Windows Deployment Services is the final deployment-focused part of the case study. The assignment requires the server to deliver Windows operating systems over the network so requesting client computers can receive Windows XP or Windows 7 without manual installation from local media.</p>
+
+            <p>WDS depends on the surrounding infrastructure already being in place. DHCP must provide addresses, DNS must support name resolution, and the domain environment must be stable enough to support repeatable provisioning. For that reason, WDS fits naturally at the end of the case-study dropdown.</p>
+
+            <div class="specs">
+                <h4>Required Outcomes</h4>
+                <ul>
+                    <li>Install and configure Windows Deployment Services on Windows Server 2008</li>
+                    <li>Prepare boot and install images for Windows XP and Windows 7</li>
+                    <li>Demonstrate PXE-based deployment to requesting client computers</li>
+                    <li>Show that WDS works together with the DHCP and domain environment</li>
                 </ul>
             </div>
         </div>
